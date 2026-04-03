@@ -1,28 +1,60 @@
 ---
-slug: pptx-parse
-name: PPTX Parse
-version: 0.2.2
-description: >
-  Parse PowerPoint PPTX files into structured Markdown with headings, lists, tables, and images. PPTX to Markdown converter, PowerPoint parser, presentation to structured document, slide deck Markdown export, PPTX Markdown extraction, PPT structure parser, presentation document converter, slide layout parser, deck to MD, PowerPoint content structurer, PPTX structured output.
-
-  Use when asked to 'parse a PowerPoint', 'convert PPTX to Markdown', 'structure a presentation as document', 'extract slides to Markdown', 'turn deck into readable format'. Solves the problem of losing structure when extracting presentation content — maintains heading hierarchy, bullet lists, table formatting, and image references.
-
-  PPTX解析, 演示文稿解析, PPT转Markdown, 幻灯片结构化提取, PowerPoint文档转换, 演示文稿格式化输出.
-
-  Powered by MinerU document parsing engine for intelligent layout analysis and structure preservation. Each slide becomes a structured Markdown section with proper heading levels, formatted tables, and image placeholders. Perfect for documentation pipelines, content migration, knowledge base ingestion, and archiving presentations as searchable documents. Supports .pptx from Microsoft PowerPoint, Google Slides, LibreOffice Impress, and Keynote exports.
-tags:
-  - pptx
-  - powerpoint
-  - markdown
-  - parser
-  - presentation
-  - document-conversion
-  - structured-output
-  - slides
-  - mineru
-  - office
-  - content-extraction
-  - formatting
+name: pptx-parse
+description: "PPTX Parse - parse PowerPoint (.pptx) presentations into structured Markdown using MinerU. Preserves slide hierarchy and text content."
+homepage: https://mineru.net
+metadata: {"openclaw": {"emoji": "📄", "requires": {"bins": ["mineru-open-api"], "env": ["MINERU_TOKEN"]}, "primaryEnv": "MINERU_TOKEN", "install": [{"id": "npm", "kind": "node", "package": "mineru-open-api", "bins": ["mineru-open-api"], "label": "Install via npm"}, {"id": "go", "kind": "go", "package": "github.com/opendatalab/MinerU-Ecosystem/cli/mineru-open-api", "bins": ["mineru-open-api"], "label": "Install via go install", "os": ["darwin", "linux"]}]}}
 ---
 
-Use the mineru tool to parse the provided PPTX file into structured Markdown. Convert each slide into a Markdown section with appropriate heading levels, preserve bullet lists, format tables, and include image references. Maintain the logical structure and reading order of the presentation.
+# PPTX Parse
+
+Parse PowerPoint (.pptx) presentations into structured Markdown using MinerU. Preserves slide structure and text hierarchy.
+
+## Install
+
+```bash
+npm install -g mineru-open-api
+# or via Go (macOS/Linux):
+go install github.com/opendatalab/MinerU-Ecosystem/cli/mineru-open-api@latest
+```
+
+## Quick Start
+
+```bash
+# Quick parse, no token required
+mineru-open-api flash-extract slides.pptx
+
+# Save to directory
+mineru-open-api flash-extract slides.pptx -o ./out/
+
+# Parse specific page range
+mineru-open-api flash-extract slides.pptx --pages 1-10
+
+# Full parse with token (tables, formulas)
+mineru-open-api extract slides.pptx -o ./out/
+```
+
+## Authentication
+
+No token needed for `flash-extract`. Token required for `extract`:
+
+```bash
+mineru-open-api auth             # Interactive token setup
+export MINERU_TOKEN="your-token" # Or via environment variable
+```
+
+Create token at: https://mineru.net/apiManage/token
+
+## Capabilities
+
+- Supported input: .pptx (local file or URL)
+- `flash-extract`: quick, no token, max 10 MB / 20 pages, Markdown output
+- `extract`: token required, full structured parsing with tables and formulas
+- Language hint with `--language` (default: `ch`, use `en` for English)
+- Slide range with `--pages` (e.g. `1-10`)
+
+## Notes
+
+- For `.ppt` (legacy format), use `ppt-extract` instead
+- Output goes to stdout by default; use `-o <dir>` to save to a file or directory
+- All progress/status messages go to stderr; document content goes to stdout
+- MinerU is open-source by OpenDataLab (Shanghai AI Lab): https://github.com/opendatalab/MinerU
