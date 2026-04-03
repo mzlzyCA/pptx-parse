@@ -1,7 +1,7 @@
 ---
 slug: pptx-parse
 name: PPTX Parse
-version: 0.2.1
+version: 0.2.2
 description: >
   Parse PowerPoint PPTX files into structured Markdown with headings, lists, tables, and images. PPTX to Markdown converter, PowerPoint parser, presentation to structured document, slide deck Markdown export, PPTX Markdown extraction, PPT structure parser, presentation document converter, slide layout parser, deck to MD, PowerPoint content structurer, PPTX structured output.
 
