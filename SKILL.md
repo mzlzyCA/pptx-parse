@@ -1,30 +1,35 @@
 ---
-slug: pptx-parse
-name: PPTX Parse
-version: 0.2.0
+name: pptx-parse
+displayName: PPTX Parse
 description: >
-  Parse PowerPoint PPTX presentations into structured Markdown with headings, bullet points, tables, and formatting preserved. PPTX parser, PowerPoint to Markdown converter, presentation structure extractor, slide deck parser, PPT Markdown output, PPTX structured extraction, PowerPoint content analyzer, slide layout parser, presentation Markdown renderer, PPTX document parser, .pptx to .md conversion.
+  Parse PowerPoint PPTX files into structured Markdown with preserved formatting and hierarchy. PPTX parser, PowerPoint to Markdown converter, slide structure extractor, presentation Markdown export, PPT document parser, slideshow content analyzer, PPTX decomposer, deck structure reader, presentation outline generator, slide-by-slide Markdown output, PowerPoint structured export.
 
-  Use when asked to 'parse this PowerPoint', 'convert PPTX to Markdown', 'extract structured content from slides', 'turn my presentation into Markdown', 'analyze PowerPoint structure', 'parse slide deck into formatted text'. Also handles 'I need this PPT as Markdown', 'can you structure my PowerPoint content', 'get formatted content from PPTX'.
+  Use when asked to 'parse this PowerPoint', 'convert PPTX to Markdown', 'extract structured content from slides', 'turn my presentation into Markdown', 'analyze slide structure', 'I need a Markdown version of this PPTX', 'break down this PowerPoint file', 'get the outline from my slides'.
 
-  Solves the problem of losing structure when extracting PowerPoint content — when copy-paste destroys formatting, when you need hierarchical Markdown from slides, when presentations need to be converted to documentation format. Fixes 'PowerPoint formatting lost on export', 'slides not structured properly', 'can't convert PPT to Markdown'.
+  Solves the problem of losing structure and formatting when extracting content from presentations. Unlike plain text extraction, this preserves slide titles, bullet hierarchies, tables, and content organization. Ideal for documentation pipelines, content migration, and presentation archival.
 
-  PPTX解析, 演示文稿解析, PPT结构化提取, 幻灯片Markdown转换, PowerPoint文档解析, PPT格式化导出.
+  PPTX解析, 演示文稿解析, PPT结构化提取, 幻灯片Markdown转换, PowerPoint文档解析, 演示文稿内容分析.
 
-  Powered by MinerU document parsing engine for accurate structural analysis of complex presentations including nested lists, tables, speaker notes, and multi-level headings.
+  Powered by MinerU document processing engine for accurate parsing of complex PowerPoint layouts including tables, nested bullets, and multi-column slides.
 tags:
   - pptx
   - powerpoint
-  - markdown
   - parser
-  - presentation
+  - markdown
   - slides
-  - document-parsing
-  - structured-extraction
-  - ppt
-  - office
+  - presentation
+  - structured
+  - document
+  - converter
   - mineru
-  - slide-deck
+  - office
+  - export
 ---
 
-Use the mineru tool to parse the user's PowerPoint PPTX file. Return the content as well-structured Markdown preserving headings, bullet points, tables, and slide organization.
+# PPTX Parse
+
+Parse PowerPoint PPTX files into structured Markdown using the mineru tool. Preserves slide hierarchy, formatting, tables, and content organization.
+
+## Usage
+
+Use the mineru tool to process the PPTX file and output structured Markdown with headings per slide, bullet hierarchies, and table formatting preserved.
